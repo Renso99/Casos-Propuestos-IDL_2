@@ -1,0 +1,48 @@
+#inicio
+print()
+print('=== COSTO DE LA LLAMADA ===')
+print('===========================')
+print()
+#lectura
+Minutos=int(input('INGRESE LOS MINUTOS >>> '))
+Dia=input('RTEALIZO LA LLAMADA UN DIA HABIL (si/no) >>>  ').upper()
+Horario=input('REALIZO LA LLAMADA EN HORARIO MATUTINO (si/no) >>> ')
+
+#validacion
+if(Minutos>0):
+
+    #proceso
+    if(Minutos>10):
+        Costo=(Minutos-10)*0.5+8.8
+    else:
+        if(Minutos>8):
+            Costo=(Minutos-8)*0.7+7.4
+        else:
+            if(Minutos>5):
+                Costo=(Minutos-5)*0.8+5
+            else:
+                Costo=Minutos*1
+    if(Dia=='SI'):
+        if(Horario=='SI'):
+            imp=0.15*Costo
+            pago=round(Costo+imp,2)
+            print()
+            print(f'EL PAGO TOTAL ES DE S/ {pago} soles POR LA LLAMADA QUE REALIZO')
+            print()
+        else:
+            imp=0.10*Costo
+            pago=round(Costo+imp,2)
+            print()
+            print(f'EL PAGO TOTAL ES DE S/ {pago} soles POR LA LLAMADA QUE REALIZO')
+            print()
+    else:
+        imp=0.03*Costo
+        pago=round(Costo+imp,2)
+        print()
+        print(f'EL PAGO TOTAL ES DE S/ {pago} soles POR LA LLAMADA QUE REALIZO')
+        print()
+else:
+    print()
+    print('>>> ERROR: DATOS no validos !!! <<<')
+    print()
+# FIN
